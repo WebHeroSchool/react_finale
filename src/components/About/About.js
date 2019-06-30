@@ -12,7 +12,10 @@ class About extends React.Component {
     super();
 
     this.state = {
-      isLoading: true,
+      isLoading: {
+        aboutMe: true,
+        myRepos: true
+      },
       repoList: [],
       hasError: false,
       error: {}
@@ -28,9 +31,7 @@ class About extends React.Component {
         console.log(data);
         this.setState({
           repoList: data,
-          isLoading: false,
-          avatarUrl: data[0].owner.avatar_url,
-          login: data[0].owner.login
+          isLoading: { myRepos: false }
         });
       })
       .catch(err =>
@@ -40,25 +41,42 @@ class About extends React.Component {
           isLoading: false
         })
       );
+
+    octokit.users
+      .getByUsername({
+        username: 'v1valasvegan'
+      })
+      .then(({ data }) => {
+        console.log(data);
+        this.setState({
+          user: data,
+          isLoading: {aboutMe: false}
+        });
+      });
   }
 
   render() {
     const { isLoading } = this.state;
 
-    return <main className={styles.main}>
+    return (
+      <main className={styles.main}>
         {this.state.hasError && (
-            <div className={styles['wrapper-error']}>
-                <h2>Что-то пошло не так...</h2>
-                <h3>{this.state.error.name}</h3>
-                <p>{this.state.error.message}</p>
-            </div>
+          <div className={styles['wrapper-error']}>
+            <h2>Что-то пошло не так...</h2>
+            <h3>{this.state.error.name}</h3>
+            <p>{this.state.error.message}</p>
+          </div>
         )}
 
-    { isLoading && <div className={styles['wrapper-loader']}></div>}
+        {(isLoading.myRepos || isLoading.aboutMe) && <div className={styles['wrapper-loader']} />}
 
-    {!isLoading && !this.state.hasError && <AboutMe />}
-    {!isLoading && !this.state.hasError && <MyRepositories />}
-    </main>;
+        {!isLoading.myRepos && !isLoading.aboutMe && !this.state.hasError && <AboutMe 
+        bio={this.state.user.bio}
+        avatar={this.state.user.avatar_url}
+        github={this.state.user.html_url}/>}
+        {!isLoading.myRepos && !isLoading.aboutMe && !this.state.hasError && <MyRepositories />}
+      </main>
+    );
   }
 }
 
