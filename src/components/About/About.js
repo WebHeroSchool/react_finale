@@ -2,6 +2,7 @@ import React from 'react';
 import Octokit from '@octokit/rest';
 import AboutMe from '../AboutMe/AboutMe';
 import MyRepositories from '../MyRepositories/MyRepositories';
+import { user } from '../../const/user';
 
 import styles from './About.module.css';
 
@@ -16,6 +17,8 @@ class About extends React.Component {
         aboutMe: true,
         myRepos: true
       },
+      firstRepo: 0,
+      lastRepo: 5,
       repoList: [],
       hasError: false,
       error: {}
@@ -25,7 +28,7 @@ class About extends React.Component {
   componentDidMount() {
     octokit.repos
       .listForUser({
-        username: 'v1valasvegan'
+        username: user
       })
       .then(({ data }) => {
         console.log(data);
@@ -44,16 +47,35 @@ class About extends React.Component {
 
     octokit.users
       .getByUsername({
-        username: 'v1valasvegan'
+        username: user
       })
       .then(({ data }) => {
         console.log(data);
         this.setState({
-          user: data,
-          isLoading: {aboutMe: false}
+          userData: data,
+          isLoading: { aboutMe: false }
         });
-      });
+      })
+      .catch(err =>
+        this.setState({
+          hasError: true,
+          error: err,
+          isLoading: false
+        })
+      );
   }
+
+  onClickPrevious = () =>
+    this.setState(state => ({
+      firstRepo: this.state.firstRepo - 5,
+      lastRepo: this.state.lastRepo - 5
+    }));
+
+  onClickNext = () =>
+    this.setState(state => ({
+      firstRepo: this.state.firstRepo + 5,
+      lastRepo: this.state.lastRepo + 5
+    }));
 
   render() {
     const { isLoading } = this.state;
@@ -61,20 +83,35 @@ class About extends React.Component {
     return (
       <main className={styles.main}>
         {this.state.hasError && (
-          <div className={styles['wrapper-error']}>
-            <h2>Что-то пошло не так...</h2>
-            <h3>{this.state.error.name}</h3>
-            <p>{this.state.error.message}</p>
+          <div className={styles['wrapper_error']}>
+            <img
+              className={styles.snafu}
+              src={require('../../img/snafu.svg')}
+              alt='snafu'
+            />
+            <h2 className={styles.subheading}>Что-то пошло не так...</h2>
+            <p className={styles.paragraph}>
+              Попробуйте <a href='.'>загрузить</a> еще раз
+            </p>
           </div>
         )}
 
-        {(isLoading.myRepos || isLoading.aboutMe) && <div className={styles['wrapper-loader']} />}
+        {(isLoading.myRepos || isLoading.aboutMe) && (
+          <div className={styles['wrapper_loader']} />
+        )}
 
-        {!isLoading.myRepos && !isLoading.aboutMe && !this.state.hasError && <AboutMe 
-        bio={this.state.user.bio}
-        avatar={this.state.user.avatar_url}
-        github={this.state.user.html_url}/>}
-        {!isLoading.myRepos && !isLoading.aboutMe && !this.state.hasError && <MyRepositories />}
+        {!isLoading.myRepos && !isLoading.aboutMe && !this.state.hasError && (
+          <AboutMe userData={this.state.userData} />
+        )}
+        {!isLoading.myRepos && !isLoading.aboutMe && !this.state.hasError && (
+          <MyRepositories
+            repoList={this.state.repoList}
+            firstRepo={this.state.firstRepo}
+            lastRepo={this.state.lastRepo}
+            onClickNext={this.onClickNext}
+            onClickPrevious={this.onClickPrevious}
+          />
+        )}
       </main>
     );
   }
