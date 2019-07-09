@@ -11,12 +11,16 @@ function App() {
       <div className={styles.container}>
         <Header />
         {routes.map(item => (
-              <Route path={item.link} exact={ item.link === '/' } component={ item.component } />
-              ))}
+          <Route
+            path={item.link}
+            exact={item.link === '/'}
+            component={item.component}
+            key={item.id}
+          />
+        ))}
       </div>
     </Router>
-  )
-  
+  );
 }
 
 export default App;

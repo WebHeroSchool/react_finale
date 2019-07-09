@@ -28,7 +28,7 @@ function TodoHeader({ todoItems, activeFilter, onClickSetActive }) {
         {filters
           .filter(item => item)
           .map(item => (
-            <li>
+            <li key={item.id}>
               <button
               className={classnames({
                 [styles.button]: true,

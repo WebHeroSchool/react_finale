@@ -1,5 +1,4 @@
 import React from 'react';
-import githubLogo from '../../img/github.svg';
 
 import styles from './AboutMe.module.css';
 
@@ -21,24 +20,24 @@ function AboutMe({ userData }) {
         </a>
       </p>
       <div className={styles.social}>
-        <a
-          href={userData.html_url}
-          aria-label='github'
-          className={styles.github}
-        >
-          <img src={githubLogo} alt='' />
+        <a href={userData.html_url} className={styles.github}>
+          <img src={require('../../img/github.svg')} alt='github' />
         </a>
-        <a href='http://vk.com' aria-label='vk' className={styles.vk} />
+        <a href='http://vk.com' className={styles.vk}>
+          <img src={require('../../img/vk.svg')} alt='vk' />
+        </a>
         <a
           href='https://www.linkedin.com/in/victor-zhuravlev-992a50182/'
-          aria-label='linked in'
           className={styles.linkedin}
-        />
+        >
+          <img src={require('../../img/linkedin.svg')} alt='linkedin' />
+        </a>
         <a
           href='https://www.facebook.com/victor.zhuravlev.12'
-          aria-label='facebook'
           className={styles.facebook}
-        />
+        >
+          <img src={require('../../img/facebook.svg')} alt='facebook' />
+        </a>
       </div>
     </section>
   );

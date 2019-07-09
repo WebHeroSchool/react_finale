@@ -76,21 +76,9 @@
   height: 24px;
 }
 
-.github {
-  margin-right: 8px;
-  background-image: url('../../img/github.svg');
-}
-
-.vk {
-  margin-right: 8px;
-  background-image: url('../../img/vk.svg');
-}
-
+.github,
+.vk, 
 .linkedin {
   margin-right: 8px;
-  background-image: url('../../img/linkedin.svg');
 }
 
-.facebook {
-  background-image: url('../../img/facebook.svg');
-}

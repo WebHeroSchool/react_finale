@@ -31,7 +31,6 @@ class About extends React.Component {
         username: user
       })
       .then(({ data }) => {
-        console.log(data);
         this.setState({
           repoList: data,
           isLoading: { myRepos: false }
@@ -50,7 +49,6 @@ class About extends React.Component {
         username: user
       })
       .then(({ data }) => {
-        console.log(data);
         this.setState({
           userData: data,
           isLoading: { aboutMe: false }
