@@ -1,4 +1,4 @@
-import TodoList from "../components/TodoList/TodoList";
+import Todo from "../components/Todo/Todo";
 import About from "../components/About/About";
 
 export const routes = [
@@ -12,7 +12,7 @@ export const routes = [
     id: 2,
     value: 'Список оставшихся дел',
     link: '/todo',
-    component: TodoList,
+    component: Todo,
   }
 ];
 
