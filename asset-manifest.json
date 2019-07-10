@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9169dd4a.chunk.css",
+    "main.js": "/static/js/main.6e8501c5.chunk.js",
+    "main.js.map": "/static/js/main.6e8501c5.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.c7680b8b.chunk.js": "/static/js/2.c7680b8b.chunk.js",
+    "static/js/2.c7680b8b.chunk.js.map": "/static/js/2.c7680b8b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.d7ef8e53c5cc68c0ce33d3a7af9bc5e2.js": "/precache-manifest.d7ef8e53c5cc68c0ce33d3a7af9bc5e2.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.9169dd4a.chunk.css.map": "/static/css/main.9169dd4a.chunk.css.map",
+    "static/media/AddItemForm.module.css": "/static/media/button-add.fc63fe64.svg",
+    "static/media/Item.module.css": "/static/media/checkbox-empty.fb6a96fd.svg",
+    "static/media/AboutMe.module.css": "/static/media/telegram.60ef2abb.svg",
+    "static/media/empty-list.svg": "/static/media/empty-list.a1d68ab9.svg",
+    "static/media/facebook.svg": "/static/media/facebook.584b642a.svg",
+    "static/media/MyRepositories.module.css": "/static/media/star.a3b344a2.svg",
+    "static/media/github.svg": "/static/media/github.3feade3d.svg",
+    "static/media/linkedin.svg": "/static/media/linkedin.2ae91a71.svg",
+    "static/media/About.module.css": "/static/media/loader.ac2ad3d5.svg",
+    "static/media/snafu.svg": "/static/media/snafu.b60513e9.svg",
+    "static/media/vk.svg": "/static/media/vk.22582ca4.svg"
+  }
+}
