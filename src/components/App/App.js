@@ -7,7 +7,7 @@ import styles from './App.module.css';
 
 function App() {
   return (
-    <Router basename='/components'>
+    <Router basename='/src/components'>
       <div className={styles.container}>
         <Header />
         {routes.map(item => (
