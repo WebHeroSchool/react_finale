@@ -7,7 +7,7 @@ import styles from './App.module.css';
 
 function App() {
   return (
-    <Router basename='/src/components'>
+    <Router basename='/react_finale'>
       <div className={styles.container}>
         <Header />
         {routes.map(item => (
