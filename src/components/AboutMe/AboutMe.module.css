@@ -82,3 +82,9 @@
   margin-right: 8px;
 }
 
+.na {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: red;
+}

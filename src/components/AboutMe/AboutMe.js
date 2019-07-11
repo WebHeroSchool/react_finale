@@ -5,7 +5,7 @@ import styles from './AboutMe.module.css';
 function AboutMe({ userData }) {
   return (
     <section className={styles.section}>
-      <img className={styles.image} src={userData.avatar_url} alt='Avatar' />
+      {(userData.avatar_url && <img className={styles.image} src={userData.avatar_url} alt='Avatar' />) || <h4 className={styles.image + ' ' + styles.na}>Аватар недоступен</h4>}
       <h1 className={styles.heading}>{userData.name}</h1>
       <p className={styles.paragraph}>{userData.bio}</p>
       <p className={styles.paragraph}>
