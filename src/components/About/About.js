@@ -20,6 +20,7 @@ class About extends React.Component {
       firstRepo: 0,
       lastRepo: 5,
       repoList: [],
+      userData: [],
       hasError: false,
       error: {}
     };
