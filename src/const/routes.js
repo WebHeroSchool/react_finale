@@ -1,5 +1,5 @@
-import Todo from "../components/Todo/Todo";
-import About from "../components/About/About";
+import Todo from '../components/Todo/Todo';
+import About from '../components/About/About';
 
 export const routes = [
   {
