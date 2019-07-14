@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import { user } from '../../const/user';
 
 import styles from './MyRepositories.module.css';
 
@@ -17,7 +18,17 @@ function MyRepositories({
           <ul className={styles['repo-list']}>
             {repoList.slice(firstRepo, lastRepo).map(repo => (
               <li className={styles.repo} key={repo.id}>
-                <h1 className={styles.heading}>{repo.name}</h1>
+                <h1 className={styles.heading}>
+                  <a href={repo.html_url} className={styles.link}>
+                    {repo.name}
+                  </a>
+                  <a
+                    href={'https://' + user + '.github.io/' + repo.name}
+                    className={styles.link + ' ' + styles['link_gh-pages']}
+                  >
+                  демо на gh-pages
+                  </a>
+                </h1>
                 <span
                   className={classnames({
                     [styles.language]: true,
@@ -50,10 +61,14 @@ function MyRepositories({
           </button>
         </section>
       )}
-      {(!repoList || (repoList.length === 0)) && (
+      {(!repoList || repoList.length === 0) && (
         <section className={styles['section_snafu'] + ' ' + styles.section}>
           <h2 className={styles.subheading}>Репозитории на github.com</h2>
-          <img className={styles.snafu} src={require('../../img/snafu.svg')} alt='snafu' />
+          <img
+            className={styles.snafu}
+            src={require('../../img/snafu.svg')}
+            alt='snafu'
+          />
           <p className={styles.paragraph}>
             Добавьте как минимум один резопзиторий на{' '}
             <a href='www.github.com'>www.github.com</a>

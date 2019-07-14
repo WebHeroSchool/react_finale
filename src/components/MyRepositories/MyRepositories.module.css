@@ -24,6 +24,23 @@
   margin: 0 0 5px;
 }
 
+.link {
+  color: #000;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: #356eff;
+}
+
+.link_gh-pages {
+  color: #82a5ff;
+  font-weight: 400;
+  font-size: 12px; 
+}
+
 .language,
 .stars,
 .forks,
@@ -126,3 +143,4 @@ button:enabled:active {
 .paragraph {
     align-self: center;
 }
+
