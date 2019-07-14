@@ -88,3 +88,13 @@
   text-align: center;
   color: red;
 }
+
+.link:hover {
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
+  transform-origin: 0 0;
+}
+
+.link {
+  transition: all 0.3s ease;
+}
