@@ -36,14 +36,14 @@ function MyRepositories({
           </ul>
           <button
             className={styles['button-back'] + ' ' + styles.button}
-            disabled={firstRepo - 5 < 0}
+            disabled={firstRepo < 5}
             onClick={() => onClickPrevious()}
           >
             Назад
           </button>
           <button
             className={styles['button-next'] + ' ' + styles.button}
-            disabled={repoList.length - lastRepo < 5}
+            disabled={repoList.length - firstRepo < 4}
             onClick={() => onClickNext()}
           >
             Далее
