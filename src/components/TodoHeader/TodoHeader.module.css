@@ -23,6 +23,7 @@
     border-radius: 23px;
     background-color: white;
     border: none;
+    outline: none;
 }
 
 .button:hover {

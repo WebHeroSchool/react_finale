@@ -9,6 +9,7 @@
     border-radius: 41px;
     padding: 10px 12px;
     flex-grow: 1;
+    outline: none;
 }
 
 .input:invalid {
@@ -20,6 +21,7 @@
     height: 36px;
     background: url('../../img/button-add.svg');
     border: none;
+    outline: none;
 }
 
 .button_add:hover {
