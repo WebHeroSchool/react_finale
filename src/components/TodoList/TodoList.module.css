@@ -1,8 +1,8 @@
 .section {
-  height: 547px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  flex-grow: inherit;
 }
 
 .item-list {
