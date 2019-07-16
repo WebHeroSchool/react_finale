@@ -52,20 +52,22 @@ function MyRepositories({
               </li>
             ))}
           </ul>
-          <button
-            className={styles['button-back'] + ' ' + styles.button}
-            disabled={firstRepo < 5}
-            onClick={() => onClickPrevious()}
-          >
-            Назад
-          </button>
-          <button
-            className={styles['button-next'] + ' ' + styles.button}
-            disabled={repoList.length - firstRepo < 4}
-            onClick={() => onClickNext()}
-          >
-            Далее
-          </button>
+          <div className={styles.buttons}>
+            <button
+              className={styles['button-back'] + ' ' + styles.button}
+              disabled={firstRepo < 5}
+              onClick={() => onClickPrevious()}
+            >
+              Назад
+            </button>
+            <button
+              className={styles['button-next'] + ' ' + styles.button}
+              disabled={repoList.length - firstRepo < 4}
+              onClick={() => onClickNext()}
+            >
+              Далее
+            </button>
+          </div>
         </section>
       )}
       {(!repoList || repoList.length === 0) && (

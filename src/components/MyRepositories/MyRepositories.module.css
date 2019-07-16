@@ -2,13 +2,16 @@
   position: relative;
   height: 432px;
   box-sizing: border-box;
-  padding: 64px 32px;
+  padding: 64px 32px 22px 32px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
   border-radius: 9px;
+  display: flex;
+  flex-direction: column;
 }
 
 .repo-list {
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 
@@ -102,21 +105,19 @@
   background-color: #4f5d95;
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  margin-top: auto;
+}
+
 .button {
-  position: absolute;
-  bottom: 22px;
   padding: 8px 16px;
   border: 1px solid #999999;
   border-radius: 37px;
   background-color: #fff;
-}
-
-.button-back {
-    left: 273px;
-}
-
-.button-next {
-    left: 354px;
+  margin: auto 5px 0 5px;
 }
 
 .button:enabled:hover {
