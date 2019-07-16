@@ -37,7 +37,7 @@
     width: 50px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 470px) {
     .whs {
         width: 30px;
     }
