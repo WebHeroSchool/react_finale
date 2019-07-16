@@ -32,3 +32,13 @@
     position: absolute;
     left: 5px;
 }
+
+.whs {
+    width: 50px;
+}
+
+@media (max-width: 400px) {
+    .whs {
+        width: 30px;
+    }
+}
