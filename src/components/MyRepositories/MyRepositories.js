@@ -19,14 +19,21 @@ function MyRepositories({
             {repoList.slice(firstRepo, lastRepo).map(repo => (
               <li className={styles.repo} key={repo.id}>
                 <h1 className={styles.heading}>
-                  <a href={repo.html_url} className={styles.link}>
+                  <a
+                    rel='noopener noreferrer'
+                    target='_blank'
+                    href={repo.html_url}
+                    className={styles.link}
+                  >
                     {repo.name}
                   </a>
                   <a
+                    rel='noopener noreferrer'
+                    target='_blank'
                     href={'https://' + user + '.github.io/' + repo.name}
                     className={styles.link + ' ' + styles['link_gh-pages']}
                   >
-                  демо на gh-pages
+                    демо на gh-pages
                   </a>
                 </h1>
                 <span

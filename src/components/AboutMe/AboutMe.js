@@ -20,20 +20,20 @@ function AboutMe({ userData }) {
         </a>
       </p>
       <div className={styles.social}>
-        <a href={userData.html_url} className={styles.link + ' ' + styles.github}>
+        <a rel='noopener noreferrer' target='_blank' href={userData.html_url} className={styles.link + ' ' + styles.github}>
           <img src={require('../../img/github.svg')} alt='github' />
         </a>
-        <a href='http://vk.com' className={styles.link + ' ' + styles.vk}>
+        <a rel='noopener noreferrer' target='_blank' href='http://vk.com' className={styles.link + ' ' + styles.vk}>
           <img src={require('../../img/vk.svg')} alt='vk' />
         </a>
         <a
-          href='https://www.linkedin.com/in/victor-zhuravlev-992a50182/'
+          rel='noopener noreferrer' target='_blank' href='https://www.linkedin.com/in/victor-zhuravlev-992a50182/'
           className={styles.link + ' ' + styles.linkedin}
         >
           <img src={require('../../img/linkedin.svg')} alt='linkedin' />
         </a>
         <a
-          href='https://www.facebook.com/victor.zhuravlev.12'
+          rel='noopener noreferrer' target='_blank' href='https://www.facebook.com/victor.zhuravlev.12'
           className={styles.link + ' ' + styles.facebook}
         >
           <img src={require('../../img/facebook.svg')} alt='facebook' />
