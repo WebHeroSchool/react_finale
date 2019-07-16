@@ -43,6 +43,10 @@ class AddItemForm extends React.Component {
           placeholder='Просто введите сюда название дела'
           value={this.state.inputValue}
           required
+          onInvalid={function(e) {
+            e.target.setCustomValidity('Заполните поле!');
+            }
+            }
           onChange={event =>
           this.setState({
               inputValue: event.target.value,
