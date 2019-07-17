@@ -13,7 +13,7 @@ class AddItemForm extends React.Component {
     };
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = event => {
     event.preventDefault();
     const valueArray = this.props.todoItems.map(item => item.value);
 
@@ -31,11 +31,12 @@ class AddItemForm extends React.Component {
 
   render() {
     return (
-      <form className={classnames({
-            [styles.form]: true,
-            [styles.snafu]: this.state.error
-          })}
-      onSubmit={this.handleSubmit}
+      <form
+        className={classnames({
+          [styles.form]: true,
+          [styles.snafu]: this.state.error
+        })}
+        onSubmit={this.handleSubmit}
       >
         <input
           type='text'
@@ -43,17 +44,20 @@ class AddItemForm extends React.Component {
           placeholder='Просто введите сюда название дела'
           value={this.state.inputValue}
           required
-          onInvalid={function(e) {
+          onInvalid={e => {
             e.target.setCustomValidity('Заполните поле!');
-            }
-            }
+          }}
+          onInput={event => {
+            event.target.setCustomValidity('');
+          }}
           onChange={event =>
-          this.setState({
+            this.setState({
               inputValue: event.target.value,
-              error: false,
-          })}
+              error: false
+            })
+          }
         />
-        <input type='submit' className={styles['button_add']} value=''></input>
+        <input type='submit' className={styles['button_add']} value='' />
       </form>
     );
   }
