@@ -1,12 +1,12 @@
 .section {
   position: relative;
-  height: 432px;
   box-sizing: border-box;
   padding: 64px 32px 22px 32px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
   border-radius: 9px;
   display: flex;
   flex-direction: column;
+  flex: auto;
 }
 
 .repo-list {
