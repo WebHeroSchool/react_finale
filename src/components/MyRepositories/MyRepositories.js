@@ -62,7 +62,7 @@ function MyRepositories({
             </button>
             <button
               className={styles['button-next'] + ' ' + styles.button}
-              disabled={repoList.length - firstRepo < 4}
+              disabled={repoList.length - firstRepo < 6}
               onClick={() => onClickNext()}
             >
               Далее
