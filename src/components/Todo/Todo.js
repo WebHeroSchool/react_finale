@@ -28,7 +28,7 @@ class Todo extends React.Component {
         {
           value: 'Закончить обучение на Hexlet',
           isDone: false,
-          id: 3
+          id: 4
         }
       ],
      
