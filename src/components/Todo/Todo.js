@@ -11,18 +11,23 @@ class Todo extends React.Component {
     this.state = {
       todoItems: [
         {
-          value: 'important',
-          isDone: false,
+          value: 'Сдать проект по React',
+          isDone: true,
           id: 1
         },
         {
-          value: 'urgent',
+          value: 'Написать Вадиму из Т-Ж',
           isDone: true,
           id: 2
         },
         {
-          value: 'miscellaneous',
-          isDone: true,
+          value: 'Пройти собес в Т-Ж',
+          isDone: false,
+          id: 3
+        },
+        {
+          value: 'Закончить обучение на Hexlet',
+          isDone: false,
           id: 3
         }
       ],

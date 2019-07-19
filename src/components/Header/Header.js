@@ -8,7 +8,7 @@ function Header() {
   return (
       <header className={styles.header}>
       <a href='www.webheroschool.ru' className={styles.link}>
-      <img src={require('../../img/whs.png')} alt='webheroschool' width='50' />
+      <img src={require('../../img/whs.png')} alt='webheroschool' className={styles.whs} />
       </a>
         {routes.map(item => (
           <NavLink

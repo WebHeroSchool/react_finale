@@ -8,11 +8,13 @@
 .navlink {  
     display: block;
     padding: 12px 32px;
+    margin: 0 5px;
+    border-radius: 37px;
     color: #000;
     font-size: 16px;
     font-weight: 700;
     text-decoration: none;
-    transition: all 0.5s ease-in-out
+    transition: all 0.5s ease-in-out;
 }
 
 .navlink:hover {
@@ -29,4 +31,14 @@
 .link {
     position: absolute;
     left: 5px;
+}
+
+.whs {
+    width: 50px;
+}
+
+@media (max-width: 470px) {
+    .whs {
+        width: 30px;
+    }
 }

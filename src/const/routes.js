@@ -10,7 +10,7 @@ export const routes = [
   },
   {
     id: 2,
-    value: 'Список оставшихся дел',
+    value: 'Дела',
     link: '/todo',
     component: Todo,
   }
