@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     padding: 24px 0;
+    min-height: 43px;
 }
 
 .navlink {  
